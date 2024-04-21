@@ -13,6 +13,7 @@ public class Main {
         tree.insert(new Node(9));
 
         tree.display();
+        System.out.println(tree.search(5));
 
 
     }
