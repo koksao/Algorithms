@@ -18,15 +18,40 @@ public class BinarySearchTree {
         return root;
     }
 
-    public void display() {
-        displayHelper(root);
+    public void inorderTraversal() {
+        inorderHelper(root);
     }
 
-    private void displayHelper(Node root) {
+    private void inorderHelper(Node root) {
         if (root != null) {
-            displayHelper(root.left);
+            inorderHelper(root.left);
             System.out.println(root.data);
-            displayHelper(root.right);
+            inorderHelper(root.right);
+        }
+    }
+
+    public void preorderTraversal() {
+        preorderHelper(root);
+    }
+
+    private void preorderHelper(Node root) {
+        if (root != null) {
+            System.out.println(root.data);
+            preorderHelper(root.left);
+            preorderHelper(root.right);
+        }
+    }
+
+    public void postorderTraversal() {
+        postorderHelper(root);
+    }
+
+    private void postorderHelper(Node root) {
+        if (root != null) {
+            postorderHelper(root.left);
+            postorderHelper(root.right);
+            System.out.println(root.data);
+            ;
         }
     }
 

@@ -12,7 +12,7 @@ public class Main {
         tree.insert(new Node(10));
         tree.insert(new Node(9));
 
-        tree.display();
+        tree.postorderTraversal();
         System.out.println(tree.search(5));
 
 
