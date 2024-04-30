@@ -51,7 +51,6 @@ public class BinarySearchTree {
             postorderHelper(root.left);
             postorderHelper(root.right);
             System.out.println(root.data);
-            ;
         }
     }
 
@@ -69,5 +68,38 @@ public class BinarySearchTree {
         } else {
             return searchHelper(root.right, data);
         }
+    }
+
+    public void deleteNode(int data) {
+        root = deleteHelper(root, data);
+    }
+
+    private Node deleteHelper(Node root, int data) {
+        if (root == null) {
+            return root;
+        }
+        if (data < root.data) {
+            root.left = deleteHelper(root.left, data);
+        } else if (data > root.data) {
+            root.right = deleteHelper(root.right, data);
+        } else {
+            if (root.left == null) {
+                return root.right;
+            } else if (root.right == null) {
+                return root.left;
+            }
+            root.data = midValue(root.right);
+            root.right = deleteHelper(root.right, root.data);
+        }
+        return root;
+    }
+
+    private int midValue(Node root) {
+        int minv = root.data;
+        while (root.left != null) {
+            minv = root.left.data;
+            root = root.left;
+        }
+        return minv;
     }
 }
