@@ -1,3 +1,5 @@
+import static java.lang.Math.max;
+
 public class BinarySearchTree {
     Node root;
 
@@ -88,18 +90,33 @@ public class BinarySearchTree {
             } else if (root.right == null) {
                 return root.left;
             }
-            root.data = midValue(root.right);
+            root.data = minValue(root.right);
             root.right = deleteHelper(root.right, root.data);
         }
         return root;
     }
 
-    private int midValue(Node root) {
+    private int minValue(Node root) {
         int minv = root.data;
         while (root.left != null) {
             minv = root.left.data;
             root = root.left;
         }
         return minv;
+    }
+
+    public int maxDepth() {
+        return maxDepthHelper(root);
+    }
+
+    private int maxDepthHelper(Node node) {
+        if (node == null) {
+            return -1;
+        } else {
+            int lDepth = maxDepthHelper(node.left);
+            int rDepth = maxDepthHelper(node.right);
+
+            return max(lDepth, rDepth) + 1;
+        }
     }
 }

@@ -13,10 +13,9 @@ public class Main {
         tree.insert(new Node(9));
 
         tree.postorderTraversal();
-        tree.deleteNode(6);
+        //  tree.deleteNode(6);
         System.out.println();
-        tree.postorderTraversal();
-
+        System.out.println(tree.maxDepth());
 
     }
 }
