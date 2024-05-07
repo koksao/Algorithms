@@ -119,4 +119,25 @@ public class BinarySearchTree {
             return max(lDepth, rDepth) + 1;
         }
     }
+
+    public int getNodeLevel(int data) {
+        return getNodeLevelHelper(data, root, 0);
+    }
+
+    private int getNodeLevelHelper(int data, Node node, int level) {
+        if (node == null) {
+            return -1;
+        }
+        if (node.data == data) {
+            return level;
+        }
+
+        int leftLvl = getNodeLevelHelper(data, node.left, level + 1);
+        if (leftLvl != -1) {
+            return leftLvl;
+        }
+
+        return getNodeLevelHelper(data, node.right, level + 1);
+
+    }
 }

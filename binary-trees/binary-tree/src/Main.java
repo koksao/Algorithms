@@ -15,7 +15,8 @@ public class Main {
         tree.postorderTraversal();
         //  tree.deleteNode(6);
         System.out.println();
-        System.out.println(tree.maxDepth());
+       // System.out.println(tree.maxDepth());
+        System.out.println(tree.getNodeLevel(10));
 
     }
 }
