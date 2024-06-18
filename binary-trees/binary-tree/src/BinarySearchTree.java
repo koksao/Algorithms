@@ -138,5 +138,6 @@ public class BinarySearchTree {
         }
 
         return getNodeLevelHelper(data, node.right, level + 1);
+
     }
 }
