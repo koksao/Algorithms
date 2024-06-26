@@ -74,4 +74,26 @@ public class LinkedList {
         }
         head = prev;
     }
+
+    public void insertNodeAtPosition(Node newNode, int position) {
+
+        if (position == 0) {
+            newNode.next = head;
+            head = newNode;
+            return;
+        }
+        Node temp = head;
+        int currentPosition = 0;
+
+        while (temp != null && currentPosition < position - 1) {
+            temp = temp.next;
+            currentPosition++;
+        }
+        if (temp == null) {
+            System.out.println("Position out of bounds");
+            return;
+        }
+        newNode.next = temp.next;
+        temp.next = newNode;
+    }
 }

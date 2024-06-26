@@ -20,12 +20,9 @@ public class Main {
         System.out.println();
         list2.printList();
         System.out.println();
-        list1.mergeLists(list2);
-        list1.printList();
-        list1.reverseList();
+        list1.insertNodeAtPosition(new Node(1), 4);
         System.out.println();
         list1.printList();
-
     }
 
 }
