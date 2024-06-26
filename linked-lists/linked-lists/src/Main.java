@@ -22,6 +22,9 @@ public class Main {
         System.out.println();
         list1.mergeLists(list2);
         list1.printList();
+        list1.reverseList();
+        System.out.println();
+        list1.printList();
 
     }
 
