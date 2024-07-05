@@ -96,4 +96,28 @@ public class LinkedList {
         newNode.next = temp.next;
         temp.next = newNode;
     }
+
+    public void deleteNodeAtPosition(int position) {
+        if (head == null) {
+            return;
+        }
+        Node temp = head;
+
+        if (position == 0) {
+            head = temp.next;
+            return;
+        }
+
+        for (int i = 0; temp != null && i < position - 1; i++) {
+            temp = temp.next;
+        }
+
+        if (temp == null) {
+            System.out.println("Position out of bounds");
+        } else {
+            Node next = temp.next.next;
+            temp.next = next;
+        }
+    }
+
 }

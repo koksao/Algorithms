@@ -23,6 +23,9 @@ public class Main {
         list1.insertNodeAtPosition(new Node(1), 4);
         System.out.println();
         list1.printList();
+        list1.deleteNodeAtPosition(2);
+        System.out.println();
+        list1.printList();
     }
 
 }
