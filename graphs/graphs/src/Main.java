@@ -1,6 +1,6 @@
 public class Main {
     public static void main(String[] args) {
-    Graph graph = new Graph();
+    Graph graph = new Graph(5);
     graph.addNode(new Node('A'));
     graph.addNode(new Node('B'));
     graph.addNode(new Node('C'));
@@ -13,6 +13,7 @@ public class Main {
     graph.addEdge(2,4);
     graph.addEdge(1,3);
 
-    graph.print();
+    graph.printList();
+    graph.printMatrix();
     }
 }
