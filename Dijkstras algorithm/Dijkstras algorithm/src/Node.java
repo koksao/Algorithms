@@ -1,7 +1,7 @@
 public class Node {
-    char data;
+    String data;
 
-    public Node(char data) {
+    public Node(String data) {
         this.data = data;
     }
 }
